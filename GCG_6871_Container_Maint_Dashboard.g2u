@@ -1,0 +1,1000 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_Main..Create(BaseForm)
+Gui.f_Main..Caption("Container Maintenance Dashboard (6871)")
+Gui.f_Main..Size(1623,863)
+Gui.f_Main..MinX(0)
+Gui.f_Main..MinY(0)
+Gui.f_Main..Position(0,0)
+Gui.f_Main..AlwaysOnTop(False)
+Gui.f_Main..FontName("Tahoma")
+Gui.f_Main..FontSize(8.25)
+Gui.f_Main..ControlBox(True)
+Gui.f_Main..MaxButton(True)
+Gui.f_Main..MinButton(True)
+Gui.f_Main..MousePointer(0)
+Gui.f_Main..Moveable(True)
+Gui.f_Main..Sizeable(True)
+Gui.f_Main..ShowInTaskBar(True)
+Gui.f_Main..TitleBar(True)
+Gui.f_Main..Event(UnLoad,f_Main_UnLoad)
+Gui.f_Main.GsGCContainer.Create(GsGridControl)
+Gui.f_Main.GsGCContainer.Enabled(True)
+Gui.f_Main.GsGCContainer.Visible(True)
+Gui.f_Main.GsGCContainer.Zorder(0)
+Gui.f_Main.GsGCContainer.Size(1623,764)
+Gui.f_Main.GsGCContainer.Position(0,69)
+Gui.f_Main.GsGCContainer.Dock(2)
+Gui.f_Main.GsGCContainer.Anchor(13)
+Gui.f_Main.GsGCContainer.Event(CellValueChanged,GsGCContainer_CellValueChanged)
+Gui.f_Main.dtpCutoff.Create(DatePicker)
+Gui.f_Main.dtpCutoff.Enabled(True)
+Gui.f_Main.dtpCutoff.Visible(True)
+Gui.f_Main.dtpCutoff.Zorder(0)
+Gui.f_Main.dtpCutoff.Size(100,20)
+Gui.f_Main.dtpCutoff.Position(7,27)
+Gui.f_Main.dtpCutoff.CheckBox(False)
+Gui.f_Main.dtpCutoff.FontName("Tahoma")
+Gui.f_Main.dtpCutoff.FontSize(8.25)
+Gui.f_Main.dtpCutoff.TabStop(True)
+Gui.f_Main.dtpCutoff.TabIndex(1)
+Gui.f_Main.lblCutoffDate.Create(Label,"Due Date Cutoff:",True,83,13,0,7,9,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblCutoffDate.BorderStyle(0)
+Gui.f_Main.chkClosedCont.Create(CheckBox)
+Gui.f_Main.chkClosedCont.Enabled(True)
+Gui.f_Main.chkClosedCont.Visible(True)
+Gui.f_Main.chkClosedCont.Zorder(0)
+Gui.f_Main.chkClosedCont.Size(149,20)
+Gui.f_Main.chkClosedCont.Position(119,36)
+Gui.f_Main.chkClosedCont.Caption("Include Closed Containers")
+Gui.f_Main.chkClosedCont.FontName("Tahoma")
+Gui.f_Main.chkClosedCont.FontSize(8.25)
+Gui.f_Main.chkClosedCont.TabStop(True)
+Gui.f_Main.chkClosedCont.TabIndex(3)
+Gui.f_Main.cmdLoad.Create(Button)
+Gui.f_Main.cmdLoad.Enabled(True)
+Gui.f_Main.cmdLoad.Visible(True)
+Gui.f_Main.cmdLoad.Zorder(0)
+Gui.f_Main.cmdLoad.Size(75,23)
+Gui.f_Main.cmdLoad.Position(1529,20)
+Gui.f_Main.cmdLoad.Caption("REFRESH")
+Gui.f_Main.cmdLoad.FontName("Tahoma")
+Gui.f_Main.cmdLoad.FontSize(8.25)
+Gui.f_Main.cmdLoad.Event(Click,cmdLoad_Click)
+Gui.f_Main.cmdLoad.Anchor(9)
+Gui.f_Main.cmdLoad.TabStop(True)
+Gui.f_Main.cmdLoad.TabIndex(12)
+Gui.f_Main.chkCutoff.Create(CheckBox)
+Gui.f_Main.chkCutoff.Enabled(True)
+Gui.f_Main.chkCutoff.Visible(True)
+Gui.f_Main.chkCutoff.Zorder(0)
+Gui.f_Main.chkCutoff.Size(146,20)
+Gui.f_Main.chkCutoff.Position(119,9)
+Gui.f_Main.chkCutoff.Caption("Use Cutoff Date")
+Gui.f_Main.chkCutoff.FontName("Tahoma")
+Gui.f_Main.chkCutoff.FontSize(8.25)
+Gui.f_Main.chkCutoff.TabStop(True)
+Gui.f_Main.chkCutoff.TabIndex(2)
+Gui.f_Main.frameCont.Create(Frame)
+Gui.f_Main.frameCont.Enabled(True)
+Gui.f_Main.frameCont.Visible(True)
+Gui.f_Main.frameCont.Zorder(0)
+Gui.f_Main.frameCont.Size(767,57)
+Gui.f_Main.frameCont.Position(306,4)
+Gui.f_Main.frameCont.Caption("")
+Gui.f_Main.frameCont.FontName("Tahoma")
+Gui.f_Main.frameCont.FontSize(8.25)
+Gui.f_Main.frameCont.BorderStyle(3)
+Gui.f_Main.frameCont.TabStop(True)
+Gui.f_Main.frameCont.TabIndex(4)
+Gui.f_Main.cmdContBrws.Create(Button)
+Gui.f_Main.cmdContBrws.Enabled(True)
+Gui.f_Main.cmdContBrws.Visible(True)
+Gui.f_Main.cmdContBrws.Zorder(0)
+Gui.f_Main.cmdContBrws.Size(24,23)
+Gui.f_Main.cmdContBrws.Position(148,24)
+Gui.f_Main.cmdContBrws.Caption("^")
+Gui.f_Main.cmdContBrws.FontName("Tahoma")
+Gui.f_Main.cmdContBrws.FontSize(8.25)
+Gui.f_Main.cmdContBrws.Parent("frameCont")
+Gui.f_Main.cmdContBrws.TabStop(True)
+Gui.f_Main.cmdContBrws.TabIndex(6)
+Gui.f_Main.cmdContBrws.Event(Click,cmdContBrws_Click)
+Gui.f_Main.lblShipDt.Create(Label,"Ship Date:",True,50,13,0,281,8,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblShipDt.BorderStyle(0)
+Gui.f_Main.lblShipDt.Parent("frameCont")
+Gui.f_Main.dtpShip.Create(DatePicker)
+Gui.f_Main.dtpShip.Enabled(True)
+Gui.f_Main.dtpShip.Visible(True)
+Gui.f_Main.dtpShip.Zorder(0)
+Gui.f_Main.dtpShip.Size(85,20)
+Gui.f_Main.dtpShip.Position(281,26)
+Gui.f_Main.dtpShip.CheckBox(False)
+Gui.f_Main.dtpShip.FontName("Tahoma")
+Gui.f_Main.dtpShip.FontSize(8.25)
+Gui.f_Main.dtpShip.Parent("frameCont")
+Gui.f_Main.dtpShip.TabStop(True)
+Gui.f_Main.dtpShip.TabIndex(8)
+Gui.f_Main.cmdUpdate.Create(Button)
+Gui.f_Main.cmdUpdate.Enabled(True)
+Gui.f_Main.cmdUpdate.Visible(True)
+Gui.f_Main.cmdUpdate.Zorder(0)
+Gui.f_Main.cmdUpdate.Size(103,23)
+Gui.f_Main.cmdUpdate.Position(655,24)
+Gui.f_Main.cmdUpdate.Caption("Update Container")
+Gui.f_Main.cmdUpdate.FontName("Tahoma")
+Gui.f_Main.cmdUpdate.FontSize(8.25)
+Gui.f_Main.cmdUpdate.TabStop(True)
+Gui.f_Main.cmdUpdate.TabIndex(11)
+Gui.f_Main.cmdUpdate.Parent("frameCont")
+Gui.f_Main.cmdUpdate.Event(Click,cmdUpdate_Click)
+Gui.f_Main.txtTracking.Create(TextBox,"",True,167,20,0,475,26,True,0,"Tahoma",8.25,,1)
+Gui.f_Main.txtTracking.Parent("frameCont")
+Gui.f_Main.txtTracking.TabStop(True)
+Gui.f_Main.txtTracking.TabIndex(10)
+Gui.f_Main.lblPortDate.Create(Label,"Port Arrival Date:",True,84,13,0,377,8,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblPortDate.BorderStyle(0)
+Gui.f_Main.lblPortDate.Parent("frameCont")
+Gui.f_Main.dtpDue.Create(DatePicker)
+Gui.f_Main.dtpDue.Enabled(True)
+Gui.f_Main.dtpDue.Visible(True)
+Gui.f_Main.dtpDue.Zorder(0)
+Gui.f_Main.dtpDue.Size(85,20)
+Gui.f_Main.dtpDue.Position(186,26)
+Gui.f_Main.dtpDue.CheckBox(False)
+Gui.f_Main.dtpDue.FontName("Tahoma")
+Gui.f_Main.dtpDue.FontSize(8.25)
+Gui.f_Main.dtpDue.Parent("frameCont")
+Gui.f_Main.dtpDue.TabStop(True)
+Gui.f_Main.dtpDue.TabIndex(7)
+Gui.f_Main.lblDueDate.Create(Label,"Due Date:",True,49,13,0,186,8,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblDueDate.BorderStyle(0)
+Gui.f_Main.lblDueDate.Parent("frameCont")
+Gui.f_Main.txtContainer.Create(TextBox,"",True,135,20,0,10,26,False,0,"Tahoma",8.25,,1)
+Gui.f_Main.txtContainer.Parent("frameCont")
+Gui.f_Main.txtContainer.TabStop(True)
+Gui.f_Main.txtContainer.TabIndex(5)
+Gui.f_Main.txtContainer.Locked(True)
+Gui.f_Main.lblContainer.Create(Label,"Container:",True,51,13,0,10,8,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblContainer.BorderStyle(0)
+Gui.f_Main.lblContainer.Parent("frameCont")
+Gui.f_Main.dtpPort.Create(DatePicker)
+Gui.f_Main.dtpPort.Enabled(True)
+Gui.f_Main.dtpPort.Visible(True)
+Gui.f_Main.dtpPort.Zorder(0)
+Gui.f_Main.dtpPort.Size(85,20)
+Gui.f_Main.dtpPort.Position(377,26)
+Gui.f_Main.dtpPort.CheckBox(False)
+Gui.f_Main.dtpPort.FontName("Tahoma")
+Gui.f_Main.dtpPort.FontSize(8.25)
+Gui.f_Main.dtpPort.Parent("frameCont")
+Gui.f_Main.dtpPort.TabStop(True)
+Gui.f_Main.dtpPort.TabIndex(9)
+Gui.f_Main.lblTracking.Create(Label,"Tracking No:",True,60,13,0,475,8,True,0,"Tahoma",8.25,,0,0)
+Gui.f_Main.lblTracking.BorderStyle(0)
+Gui.f_Main.lblTracking.Parent("frameCont")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bError.Declare(Boolean)
+V.Global.bUnattended.Declare(Boolean)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+'open the connection to the database
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+
+'callsub to build the grid
+F.Intrinsic.Control.CallSub(BuildGrid)
+
+'callsub to format the grid
+F.Intrinsic.Control.CallSub(FormatGrid)
+
+'callsub to deserialize the grid
+F.Intrinsic.Control.CallSub(Deserialize)
+
+'apply theme
+Gui.f_Main..ApplyTheme()	
+
+'show the form
+Gui.f_Main..Show
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.BuildGrid.Start
+F.Intrinsic.Control.Try
+
+'check to see if the datatable exists
+'if it does, close it
+F.Intrinsic.Control.If(V.DataTable.dtContainer.Exists)
+	F.Data.DataTable.Close("dtContainer")
+F.Intrinsic.Control.EndIf
+
+'create the datatable
+F.Data.DataTable.Create("dtContainer", True)
+
+'add columns
+F.Data.DataTable.AddColumn("dtContainer", "PO", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "PO_LINE", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "CONTAINER_NO", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "VENDOR", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "VENDOR_NAME", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "PO_COST", "FLOAT")
+F.Data.DataTable.AddColumn("dtContainer", "PO_QTY", "FLOAT")
+F.Data.DataTable.AddColumn("dtContainer", "QTY_CONTAINER", "FLOAT")
+F.Data.DataTable.AddColumn("dtContainer", "DUE_DATE", "DATE")
+F.Data.DataTable.AddColumn("dtContainer", "SHIP_DATE", "DATE")
+F.Data.DataTable.AddColumn("dtContainer", "PORT_ARRIVAL_DATE", "DATE")
+F.Data.DataTable.AddColumn("dtContainer", "TRACKING_NO", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "SHIP_QTY", "FLOAT")
+F.Data.DataTable.AddColumn("dtContainer", "RECEIVED_QTY", "FLOAT")
+F.Data.DataTable.AddColumn("dtContainer", "REJECT_QTY", "FLOAT")
+F.Data.DataTable.AddColumn("dtContainer", "REC_NOTINSP_QTY", "FLOAT")
+F.Data.DataTable.AddColumn("dtContainer", "CLOSED", "BOOLEAN")
+F.Data.DataTable.AddColumn("dtContainer", "PART", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "DESCRIPTION", "STRING")
+F.Data.DataTable.AddColumn("dtContainer", "ORIGINAL_LINE", "STRING")
+
+
+'Add expression column to calculate extended cost
+F.Data.DataTable.AddExpressionColumn("dtContainer", "EXT_COST", "Float", "[PO_COST] * [QTY_CONTAINER]")
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.BuildGrid.End
+
+Program.Sub.FormatGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sDefault.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+
+'create the gridview from the datatable
+Gui.f_Main.GsGCContainer.AddGridviewFromDatatable("gvContainer", "dtContainer")
+V.Local.sGV.Set("gvContainer")
+
+'set grid view properties
+Gui.f_Main.GsGCContainer.SetGridviewProperty(V.Local.sGV, "AllowSort", True)
+Gui.f_Main.GsGCContainer.SetGridviewProperty(V.Local.sGV, "AllowFilter", True)
+Gui.f_Main.GsGCContainer.SetGridviewProperty(V.Local.sGV, "OptionsViewShowGroupPanel", True)
+Gui.f_Main.GsGCContainer.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+Gui.f_Main.GsGCContainer.SetGridviewProperty(V.Local.sGV, "MultiSelect", False)
+Gui.f_Main.GsGCContainer.SetGridviewProperty(V.Local.sGV, "ShowGroupPanel", True)
+Gui.f_Main.GsGCContainer.SetGridviewProperty(V.Local.sGV, "ExpandAllGroups", True)
+
+'set properites for the columns
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO", V.Local.sProperty, "PO")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_LINE", V.Local.sProperty, "PO LIne")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CONTAINER_NO", V.Local.sProperty, "Container")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR", V.Local.sProperty, "Vendor")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR_NAME", V.Local.sProperty, "Vendor Name")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_COST", V.Local.sProperty, "Cost")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_QTY", V.Local.sProperty, "PO Line Qty")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "EXT_COST", V.Local.sProperty, "Extended Cost")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "QTY_CONTAINER", V.Local.sProperty, "Qty in Container")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty, "Due Date")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty, "Ship Date")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty, "Port Arrival Date")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "TRACKING_NO", V.Local.sProperty, "Tracking No.")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_QTY", V.Local.sProperty, "Shipped Qty")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "RECEIVED_QTY", V.Local.sProperty, "Received Qty")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REJECT_QTY", V.Local.sProperty, "Rejected Qty")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REC_NOTINSP_QTY", V.Local.sProperty, "Rec Not Insp Qty")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CLOSED", V.Local.sProperty, "Closed")
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Left")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_LINE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CONTAINER_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR_NAME", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "EXT_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "QTY_CONTAINER", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "TRACKING_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "RECEIVED_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REJECT_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REC_NOTINSP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CLOSED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_LINE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CONTAINER_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR_NAME", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "EXT_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "QTY_CONTAINER", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "TRACKING_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "RECEIVED_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REJECT_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REC_NOTINSP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CLOSED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("False")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_LINE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PART", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DESCRIPTION", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CONTAINER_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR_NAME", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "QTY_CONTAINER", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "EXT_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty, True)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty, True)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty, True)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "TRACKING_NO", V.Local.sProperty, True)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "RECEIVED_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REJECT_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REC_NOTINSP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CLOSED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("True")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_LINE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CONTAINER_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR_NAME", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "QTY_CONTAINER", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "EXT_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty, False)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty, False)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty, False)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "TRACKING_NO", V.Local.sProperty, False)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "RECEIVED_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REJECT_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REC_NOTINSP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CLOSED", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("MinWidth")
+V.Local.sDefault.Set("75")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_LINE", V.Local.sProperty, 60)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CONTAINER_NO", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "VENDOR_NAME", V.Local.sProperty, 150)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "EXT_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "QTY_CONTAINER", V.Local.sProperty,95)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty, 95)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "TRACKING_NO", V.Local.sProperty, 80)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "RECEIVED_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REJECT_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REC_NOTINSP_QTY", V.Local.sProperty,90)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CLOSED", V.Local.sProperty, 75)
+
+V.Local.sProperty.Set("MaxWidth")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CLOSED", V.Local.sProperty, 75)
+
+V.Local.sProperty.Set("DisplayCustomDatetime")
+V.Local.sDefault.Set("d")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+V.Local.sDefault.Set("#,###,###,##0.0000")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "QTY_CONTAINER", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "RECEIVED_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REJECT_QTY", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "REC_NOTINSP_QTY", V.Local.sProperty,V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_QTY", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+V.Local.sDefault.Set("$#,###,###,##0.0000")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PO_COST", V.Local.sProperty, V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "EXT_COST", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("CellBackColor")
+V.Local.sDefault.Set("LightYellow")
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "DUE_DATE", V.Local.sProperty,  V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "SHIP_DATE", V.Local.sProperty,  V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "PORT_ARRIVAL_DATE", V.Local.sProperty,  V.Local.sDefault)
+Gui.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "TRACKING_NO", V.Local.sProperty,  V.Local.sDefault)
+
+'automatically group by container 
+GUi.f_Main.GsGCContainer.SetColumnProperty(V.Local.sGV, "CONTAINER_NO","GroupIndex", 0)
+'add sumarry item 
+Gui.f_Main.GsGCContainer.AddGridGroupSummaryItem("gvContainer", "EXT_COST", "CONTAINER_COST", "SUM", " - Total Cost per Container: ", "", "c2")
+
+Gui.f_Main.GsGCContainer.MainView(V.Local.sGV)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatGrid.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+V.Local.sSerialize.Declare(String)
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvContainer",6871,0,5,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 6871 And Seq < 3000;")
+	F.ODBC.Connection!common.Close
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode, "gvContainer",6871,3000,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	Gui.f_Main.GsGCContainer.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.cmdLoad_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.bUseCutoff.Declare(Boolean)
+V.Local.bInclClosed.Declare(Boolean)
+V.Local.dCutoffDate.Declare(Date)
+V.Local.sCutoffDate.Declare(String)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.UI.InvokeWaitDialog("Loading data...", "Please Wait")
+Gui.f_Main.GsGCContainer.Visible(False)
+
+'check to see if dtContainers has any records. If it does, delete them and reload the grid
+F.Intrinsic.Control.If(V.DataTable.dtContainer.RowCount--,>,-1)
+	F.Data.DataTable.DeleteRow("dtContainer")
+F.Intrinsic.Control.EndIf
+
+'set the variable for cutoff due date
+V.Local.dCutoffDate.Set(V.Screen.f_Main!dtpCutoff.Value)
+'format the date for PSQL friendly query
+F.Intrinsic.String.Format(V.Local.dCutoffDate, "YYYY-MM-DD", V.Local.sCutoffDate)
+
+'set the variable for including closed containers
+V.Local.bInclClosed.Set(V.Screen.f_Main!chkClosedCont.Value)
+
+'set the variable for using the cutoff date
+V.Local.bUseCutoff.Set(V.Screen.f_Main!chkCutoff.Value)
+
+'check to see if they want to include the closed containers
+F.Intrinsic.Control.If(V.Local.bInclClosed,=,True)
+	F.Intrinsic.Control.If(V.Local.bUseCutoff,=,True)
+		'build SQL statement to include closed containers using the cutoff date
+		F.Intrinsic.String.Build("SELECT A.PO, A.PO_LINE, A.CONTAINER AS CONTAINER_NO, A.VENDOR, B.NAME_VENDOR AS VENDOR_NAME, CAST(A.QTY_IN_CONTAINER AS FLOAT) AS QTY_CONTAINER, A.DUE_DATE, A.SHIP_DATE, CAST(A.SHIPPED_QTY AS FLOAT) AS SHIP_QTY, CAST(A.RECVD_QTY AS FLOAT) AS RECEIVED_QTY,D.PART AS PART, D.DESCRIPTION AS DESCRIPTION,D.USER_5 AS ORIGINAL_LINE, CAST(A.REJ_QTY AS FLOAT) AS REJECT_QTY, CAST(A.RECVD_QTY_NOT_INSP AS FLOAT) AS REC_NOTINSP_QTY, A.CLOSE_FLAG AS CLOSED, C.PORT_ARRIVAL_DATE, LTRIM(RTRIM(C.TRACKING_NO)) AS TRACKING_NO, CAST(D.COST AS FLOAT) AS PO_COST, CAST(D.QTY_ORDER AS FLOAT) AS PO_QTY FROM V_PO_CONTAINER A LEFT JOIN V_VENDOR_MASTER B ON A.VENDOR = B.VENDOR LEFT JOIN GCG_6871_CONTAINER C ON A.PO = C.PO AND A.PO_LINE = C.PO_LINE AND LTRIM(RTRIM(A.CONTAINER)) = LTRIM(RTRIM(C.CONTAINER_NO)) LEFT JOIN V_PO_LINES D ON A.PO = D.PURCHASE_ORDER AND A.PO_LINE = D.RECORD_NO WHERE A.DUE_DATE <= '{0}' ORDER BY A.PO, A.PO_LINE, A.CONTAINER", V.Local.sCutoffDate, V.Local.sSQL)
+	F.Intrinsic.Control.Elseif(V.Local.bUseCutoff,=,False)
+		'build SQL statement to include closed containers not using the cutoff date
+		V.Local.sSQL.Set("SELECT A.PO, A.PO_LINE, A.CONTAINER AS CONTAINER_NO, A.VENDOR, B.NAME_VENDOR AS VENDOR_NAME, CAST(A.QTY_IN_CONTAINER AS FLOAT) AS QTY_CONTAINER, A.DUE_DATE, A.SHIP_DATE, CAST(A.SHIPPED_QTY AS FLOAT) AS SHIP_QTY, CAST(A.RECVD_QTY AS FLOAT) AS RECEIVED_QTY,D.PART AS PART,D.DESCRIPTION AS DESCRIPTION,D.USER_5 AS ORIGINAL_LINE, CAST(A.REJ_QTY AS FLOAT) AS REJECT_QTY, CAST(A.RECVD_QTY_NOT_INSP AS FLOAT) AS REC_NOTINSP_QTY, A.CLOSE_FLAG AS CLOSED, C.PORT_ARRIVAL_DATE, LTRIM(RTRIM(C.TRACKING_NO)) AS TRACKING_NO, CAST(D.COST AS FLOAT) AS PO_COST, CAST(D.QTY_ORDER AS FLOAT) AS PO_QTY FROM V_PO_CONTAINER A LEFT JOIN V_VENDOR_MASTER B ON A.VENDOR = B.VENDOR LEFT JOIN GCG_6871_CONTAINER C ON A.PO = C.PO AND A.PO_LINE = C.PO_LINE AND LTRIM(RTRIM(A.CONTAINER)) = LTRIM(RTRIM(C.CONTAINER_NO)) LEFT JOIN V_PO_LINES D ON A.PO = D.PURCHASE_ORDER AND A.PO_LINE = D.RECORD_NO ORDER BY A.PO, A.PO_LINE, A.CONTAINER")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else(V.Local.bInclClosed,=,False)
+	F.Intrinsic.Control.If(V.Local.bUseCutoff,=,True)
+		'build SQL statement to exclude closed containers with a cutoff date
+		F.Intrinsic.String.Build("SELECT A.PO, A.PO_LINE, A.CONTAINER AS CONTAINER_NO, A.VENDOR, B.NAME_VENDOR AS VENDOR_NAME, CAST(A.QTY_IN_CONTAINER AS FLOAT) AS QTY_CONTAINER, A.DUE_DATE, A.SHIP_DATE, CAST(A.SHIPPED_QTY AS FLOAT) AS SHIP_QTY, CAST(A.RECVD_QTY AS FLOAT) AS RECEIVED_QTY,D.PART AS PART,D.DESCRIPTION AS DESCRIPTION,D.USER_5 AS ORIGINAL_LINE, CAST(A.REJ_QTY AS FLOAT) AS REJECT_QTY, CAST(A.RECVD_QTY_NOT_INSP AS FLOAT) AS REC_NOTINSP_QTY, A.CLOSE_FLAG AS CLOSED, C.PORT_ARRIVAL_DATE, LTRIM(RTRIM(C.TRACKING_NO)) AS TRACKING_NO,  CAST(D.COST AS FLOAT) AS PO_COST, CAST(D.QTY_ORDER AS FLOAT) AS PO_QTY  FROM V_PO_CONTAINER A LEFT JOIN V_VENDOR_MASTER B ON A.VENDOR = B.VENDOR LEFT JOIN GCG_6871_CONTAINER C ON A.PO = C.PO AND A.PO_LINE = C.PO_LINE AND LTRIM(RTRIM(A.CONTAINER)) = LTRIM(RTRIM(C.CONTAINER_NO)) LEFT JOIN V_PO_LINES D ON A.PO = D.PURCHASE_ORDER AND A.PO_LINE = D.RECORD_NO WHERE A.DUE_DATE <= '{0}' AND A.CLOSE_FLAG <> 1 ORDER BY A.PO, A.PO_LINE, A.CONTAINER", V.Local.sCutoffDate, V.Local.sSQL)
+	F.Intrinsic.Control.ElseIf(V.Local.bUseCutoff,=,False)
+		'build SQL statement to exclude closed containers with no cutoff date
+		V.Local.sSQL.Set("SELECT A.PO, A.PO_LINE, A.CONTAINER AS CONTAINER_NO, A.VENDOR, B.NAME_VENDOR AS VENDOR_NAME, CAST(A.QTY_IN_CONTAINER AS FLOAT) AS QTY_CONTAINER, A.DUE_DATE, A.SHIP_DATE, CAST(A.SHIPPED_QTY AS FLOAT) AS SHIP_QTY, CAST(A.RECVD_QTY AS FLOAT) AS RECEIVED_QTY,D.PART AS PART,D.DESCRIPTION AS DESCRIPTION,D.USER_5 AS ORIGINAL_LINE, CAST(A.REJ_QTY AS FLOAT) AS REJECT_QTY, CAST(A.RECVD_QTY_NOT_INSP AS FLOAT) AS REC_NOTINSP_QTY, A.CLOSE_FLAG AS CLOSED, C.PORT_ARRIVAL_DATE, LTRIM(RTRIM(C.TRACKING_NO)) AS TRACKING_NO,  CAST(D.COST AS FLOAT) AS PO_COST, CAST(D.QTY_ORDER AS FLOAT) AS PO_QTY  FROM V_PO_CONTAINER A LEFT JOIN V_VENDOR_MASTER B ON A.VENDOR = B.VENDOR LEFT JOIN GCG_6871_CONTAINER C ON A.PO = C.PO AND A.PO_LINE = C.PO_LINE AND LTRIM(RTRIM(A.CONTAINER)) = LTRIM(RTRIM(C.CONTAINER_NO)) LEFT JOIN V_PO_LINES D ON A.PO = D.PURCHASE_ORDER AND A.PO_LINE = D.RECORD_NO WHERE A.CLOSE_FLAG <> 1 ORDER BY A.PO, A.PO_LINE, A.CONTAINER")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'check to see if temp datatable exists. If it does, close it
+F.Intrinsic.Control.If(V.DataTable.dtTemp.Exists,=,True)
+	F.Data.DataTable.Close("dtTemp")
+F.Intrinsic.Control.EndIf
+
+'create temp datatable
+F.Data.DataTable.CreateFromSQL("dtTemp", "con", V.Local.sSQL, True)
+
+'merge temp datatable into dtContainers
+F.Data.DataTable.Merge("dtTemp", "dtContainer", True, 1)
+
+'close temp datatable
+F.Data.DataTable.Close("dtTemp")
+
+Gui.f_Main.GsGCContainer.Visible(True)
+
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdLoad_Click.End
+
+Program.Sub.cmdContBrws_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sContainers.Declare(String)
+V.Local.sRet.Declare(String)
+
+
+'check to see if the datatable has been loaded.  If it has, populate the browser with the containers in the datatable
+F.Intrinsic.Control.If(V.DataTable.dtContainer.RowCount--,>,-1)
+	F.Intrinsic.Control.If(V.DataView.dtContainer!dvTempContainer.Exists)
+		F.Data.DataView.Close("dtContainer", "dvTempContainer")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Create("dtContainer", "dvTempContainer", 22)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtTempCont.Exists)
+		F.Data.DataTable.Close("dtTempCont")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.ToDataTableDistinct("dtContainer", "dvTempContainer", "dtTempCont", "CONTAINER_NO")
+	
+	F.Intrinsic.Control.If(V.DataView.dtTempCont!dvTempCont.Exists)
+		F.Data.DataView.Close("dtTempCont", "dvTempCont")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Create("dtTempCont", "dvTempCont", 22, "", "CONTAINER_NO")
+	F.Data.DataView.ToString("dtTempCont", "dvTempCont", "CONTAINER_NO", "*!*", "#$#", V.Local.sContainers)
+	
+	F.Intrinsic.UI.BrowserFromString("Select a Container for Update", V.Local.sContainers, "*!*", "#$#", "Container Number", "500", V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")
+		Gui.f_Main.txtContainer.Text(V.Local.sRet.Trim)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("You must select a Container before you can continue with an Update.", "Required Field")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	'if it hasn't, display a message box saying the grid has to be loaded before they can browser for a container
+	F.Intrinsic.UI.Msgbox("You must load the Container data before you can select a Container to update. Please click the Refresh button and try again.", "Required Information")
+	Gui.f_Main.cmdLoad.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdContBrws_Click.End
+Program.Sub.cmdUpdate_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+V.Local.dDueDate.Declare(Date)
+V.Local.dShipDate.Declare(Date)
+V.Local.dPortArrivalDate.Declare(Date)
+V.Local.sContainerNo.Declare(String)
+V.Local.sShipDate.Declare(String)
+V.Local.sDueDate.Declare(String)
+V.Local.sPortArrivalDate.Declare(String)
+V.Local.sTrackingNo.Declare(String)
+V.Local.sSelect.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sPO.Declare(String)
+V.Local.sPOLine.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sVendor.Declare(String)
+V.Local.sDueDateKey.Declare(String)
+V.Local.sShipDateKey.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.bUpdateFlag.Declare(Boolean, False)
+
+'set the container no variable
+V.Local.sContainerNo.Set(V.Screen.f_Main!txtContainer.Text)
+
+'check to see that a container has been selected. If it has, proceed with updates
+F.Intrinsic.Control.If(V.Local.sContainerNo.Trim,<>, "")
+	'get the new due date
+	V.Local.dDueDate.Set(V.Screen.f_Main!dtpDue.Value)
+	F.Intrinsic.String.Format(V.Local.dDueDate, "YYYY-MM-DD", V.Local.sDueDate)
+	'get the due date key
+	F.Intrinsic.String.Format(V.Local.dDueDate, "YYYYMMDD", V.Local.sDueDateKey)
+	
+	'check to see if the due date matches todays date
+	F.Intrinsic.Control.If(V.Local.dDueDate.PervasiveDate,=,V.Ambient.Date.PervasiveDate)
+		'notify the user that the due date is the same as todays date and ask them if they want to continue with the update
+		F.Intrinsic.UI.Msgbox("The Due Date is set as Today's Date. Are you sure you want to continue with the update for the Due Date?", "Warning", 4, V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,=,6)
+			'if the user clicks yes, update the due date
+			'update the due date in PO Container
+			F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET DUE_DATE = '{0}' WHERE CONTAINER = '{1}'", v.Local.sDueDate, V.Local.sContainerNo.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+			F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET DUE_DATE_KEY = '{0}' WHERE CONTAINER = '{1}'", v.Local.sDueDateKey,  V.Local.sContainerNo.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET DUE_DATE = '{0}' WHERE CONTAINER = '{1}'", v.Local.sDueDate, V.Local.sContainerNo.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+		F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET DUE_DATE_KEY = '{0}' WHERE CONTAINER = '{1}'", v.Local.sDueDateKey,  V.Local.sContainerNo.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.Control.EndIf
+
+'--------------------------------------------------------------------------------
+	'get the new ship date
+	V.Local.dShipDate.Set(V.Screen.f_Main!dtpShip.Value)
+	F.Intrinsic.String.Format(V.Local.dShipDate, "YYYY-MM-DD", V.Local.sShipDate)
+	'get the ship date key
+	F.Intrinsic.String.Format(V.Local.dShipDate, "YYYYMMDD", V.Local.sShipDateKey)
+	
+	'check to see if the ship date matches todays date
+	F.Intrinsic.Control.If(V.Local.dShipDate.PervasiveDate,=,V.Ambient.Date.PervasiveDate)
+		'notify the user that the due date is the same as todays date and ask them if they want to continue with the update
+		F.Intrinsic.UI.Msgbox("The Ship Date is set as Today's Date. Are you sure you want to continue with the update for the Ship Date?", "Warning", 4, V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,=,6)
+			'if the user clicks yes, update the ship date
+			'update the ship date in PO Container
+			F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET SHIP_DATE = '{0}' WHERE CONTAINER = '{1}'", v.Local.sShipDate, V.Local.sContainerNo.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+			F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET SHIP_DATE_KEY = '{0}' WHERE CONTAINER = '{1}'", v.Local.sShipDateKey,  V.Local.sContainerNo.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET SHIP_DATE = '{0}' WHERE CONTAINER = '{1}'", v.Local.sShipDate, V.Local.sContainerNo.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+		F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET SHIP_DATE_KEY = '{0}' WHERE CONTAINER = '{1}'", v.Local.sShipDateKey,  V.Local.sContainerNo.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+
+'-------------------------------------------------------------------------------
+	'get the new port arrival date
+	V.Local.dPortArrivalDate.Set(V.Screen.f_Main!dtpPort.Value)
+	F.Intrinsic.String.Format(V.Local.dPortArrivalDate, "YYYY-MM-DD", V.Local.sPortArrivalDate)
+	
+	F.Intrinsic.Control.If(V.Local.dPortArrivalDate.PervasiveDate,=,V.Ambient.Date.PervasiveDate)
+		'notify the user that the due date is the same as todays date and ask them if they want to continue with the update
+		F.Intrinsic.UI.Msgbox("The Port Arrival Date is set as Today's Date. Are you sure you want to continue with the update for the Port Arrival Date?", "Warning", 4, V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,=,6)
+			V.Local.bUpdateFlag.Set(True)
+		F.Intrinsic.Control.Else
+			V.Local.bUpdateFlag.Set(False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.bUpdateFlag.Set(True)
+	F.Intrinsic.Control.EndIf
+	
+	'get the new tracking number
+	V.Local.sTrackingNo.Set(V.Screen.f_Main!txtTracking.Text)
+
+	'update the new Port Arrival Date and Tracking number for the custom table
+	'Use the container number to find all the rows in the grid that match so we can pull the PO and PO line
+	F.Intrinsic.String.Build("[CONTAINER_NO] = '{0}'", V.Local.sContainerNo.Trim, V.Local.sFilter)
+	F.Data.DataTable.Select("dtContainer", V.Local.sFilter, V.Local.sSelect)
+	F.Intrinsic.String.Split(V.Local.sSelect, "*!*", V.Local.sSelect)
+	F.Intrinsic.Control.If(V.Local.sSelect.UBound,>,0)
+		'if there is more than one row, loop through the records to get the PO and PO Line
+		F.Intrinsic.Control.For(V.Local.iCnt,0, V.Local.sSelect.UBound,1)
+			V.Local.iRow.Set(V.Local.sSelect(V.Local.iCnt).Long)
+			V.Local.sPO.Set(V.DataTable.dtContainer(V.Local.iRow).PO!FieldValTrim)
+			V.Local.sPOLine.Set(V.DataTable.dtContainer(V.Local.iRow).PO_Line!FieldValTrim)
+			V.Local.sVendor.Set(V.DataTable.dtContainer(V.Local.iRow).VENDOR!FieldValTrim)
+			
+			F.Intrinsic.String.Build("SELECT * FROM GCG_6871_CONTAINER WHERE PO = '{0}' AND PO_LINE = '{1}' AND CONTAINER_NO = '{2}'", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				F.Intrinsic.Control.If(V.Local.bUpdateFlag,=,True)
+					'if the user clicks yes, update the port arrival date
+					F.Intrinsic.String.Build("UPDATE GCG_6871_CONTAINER SET PORT_ARRIVAL_DATE = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER_NO = '{3}'", v.Local.sPortArrivalDate, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.If(V.Local.bUpdateFlag,=,True)
+					'if it doesn't, insert a record
+					F.Intrinsic.String.Build("INSERT INTO GCG_6871_CONTAINER (PO, PO_LINE, CONTAINER_NO, VENDOR, PORT_ARRIVAL_DATE) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sVendor.Trim, V.Local.sPortArrivalDate, v.Local.sSQL)
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.Local.sTrackingNo.Trim,<>,"")
+				F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				'if it does, update it
+					F.Intrinsic.String.Build("UPDATE GCG_6871_CONTAINER SET TRACKING_NO = '{0}'  WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER_NO = '{3}'", V.Local.sTrackingNo.Trim, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+				F.Intrinsic.Control.Else
+					'if it doesn't, insert a record
+					F.Intrinsic.String.Build("INSERT INTO GCG_6871_CONTAINER (PO, PO_LINE, CONTAINER_NO, VENDOR,TRACKING_NO) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sVendor.Trim, V.Local.sTrackingNo.Trim, v.Local.sSQL)
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+				
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Control.ElseIf(V.Local.sSelect.UBound,=,0)
+		V.Local.sPO.Set(V.DataTable.dtContainer(V.Local.sSelect.Long).PO!FieldValTrim)
+		V.Local.sPOLine.Set(V.DataTable.dtContainer(V.Local.sSelect.Long).PO_LINE!FieldValTrim)
+		V.Local.sVendor.Set(V.DataTable.dtContainer(V.Local.sSelect.Long).VENDOR!FieldValTrim)
+		F.Intrinsic.String.Build("SELECT * FROM GCG_6871_CONTAINER WHERE PO = '{0}' AND PO_LINE = '{1}' AND CONTAINER_NO = '{2}'", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			F.Intrinsic.Control.If(V.Local.bUpdateFlag,=,True)
+				'if the user clicks yes, update the port arrival date
+				F.Intrinsic.String.Build("UPDATE GCG_6871_CONTAINER SET PORT_ARRIVAL_DATE = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER_NO = '{3}'", v.Local.sPortArrivalDate, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+				F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.bUpdateFlag,=,True)
+				'if it doesn't, insert a record
+				F.Intrinsic.String.Build("INSERT INTO GCG_6871_CONTAINER (PO, PO_LINE, CONTAINER_NO, VENDOR, PORT_ARRIVAL_DATE) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sVendor.Trim, V.Local.sPortArrivalDate, v.Local.sSQL)
+				F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.If(V.Local.sTrackingNo.Trim,<>,"")
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			'if it does, update it
+				F.Intrinsic.String.Build("UPDATE GCG_6871_CONTAINER SET TRACKING_NO = '{0}'  WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER_NO = '{3}'", V.Local.sTrackingNo.Trim, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+				F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Intrinsic.Control.Else
+				'if it doesn't, insert a record
+				F.Intrinsic.String.Build("INSERT INTO GCG_6871_CONTAINER (PO, PO_LINE, CONTAINER_NO, VENDOR,TRACKING_NO) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sVendor.Trim, V.Local.sTrackingNo.Trim, v.Local.sSQL)
+				F.ODBC.Connection!con.Execute(V.Local.sSQL)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.EndIf
+	
+	'reload the grid so the user can see the updated values
+	Gui.f_Main.GsGCContainer.Visible(False)
+	F.Intrinsic.Control.CallSub(cmdLoad_Click)
+	Gui.f_Main.GsGCContainer.Visible(True)
+	
+	Gui.f_Main.txtContainer.Text("")
+	Gui.f_Main.dtpDue.Value(V.Ambient.Date)
+	Gui.f_Main.dtpPort.Value(V.Ambient.Date)
+	Gui.f_Main.dtpShip.Value(V.Ambient.Date)
+	Gui.f_Main.txtTracking.Text("")
+	
+F.Intrinsic.Control.Else
+'if a container has not been selected, don't allow the user to proceed
+	F.Intrinsic.UI.Msgbox("You must select a Container before you can continue.", "Required Field")
+	Gui.f_Main.cmdContBrws.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpdate_Click.End
+Program.Sub.GsGCContainer_CellValueChanged.Start
+F.Intrinsic.Control.Try
+V.Local.dDueDate.Declare(Date)
+V.Local.dShipDate.Declare(Date)
+V.Local.dPortArrivalDate.Declare(Date)
+V.Local.iColumn.Declare(Long)
+V.Local.sSQL.Declare(String)
+V.Local.sPO.Declare(String)
+V.Local.sPOLine.Declare(String)
+V.Local.sContainerNo.Declare(String)
+V.Local.sTrackingNo.Declare(String)
+V.Local.sDueDate.Declare(String)
+V.Local.sShipDate.Declare(String)
+V.Local.sPortArrivalDate.Declare(String)
+V.Local.sVendor.Declare(String)
+V.Local.sRet.Declare(String)
+v.Local.sDateKey.Declare(String)
+
+F.Intrinsic.Control.BlockEvents
+
+'check to see which column was changed
+'if the tracking number or port arrival date were changed, either insert the record or update the existing record
+'if the due date or ship date are changed, update the record in the PO Container table (use a callwrapper if available)
+F.Intrinsic.Control.SelectCase(V.Args.Column.Trim)
+F.Intrinsic.Control.Case("DUE_DATE")
+	'get the value for the new due date
+	V.Local.dDueDate.Set(V.DataTable.dtContainer(V.Args.RowIndex).DUE_DATE!FieldVal)
+	F.Intrinsic.String.Format(V.Local.dDueDate, "YYYY-MM-DD",  V.Local.sDueDate)
+	F.Intrinsic.String.Format(V.Local.dDueDate, "YYYYMMDD",  V.Local.sDateKey)
+	V.Local.sPO.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO!FieldValTrim)
+	V.Local.sPOLine.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO_LINE!FieldValTrim)
+	F.Intrinsic.String.LPad(V.Local.sPOLine, "0", 3, V.Local.sPOLine)
+	F.Intrinsic.String.RPad(V.Local.sPOLine, "0",4, V.Local.sPOLine)
+	V.Local.sContainerNo.Set(V.DataTable.dtContainer(V.Args.RowIndex).CONTAINER_NO!FieldValTrim)
+	V.Local.sVendor.Set(V.DataTable.dtContainer(V.Args.RowIndex).VENDOR!FieldValTrim)
+	
+	'update the due date in the PO container table
+	F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET DUE_DATE = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER = '{3}'", v.Local.sDueDate, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	'update the due date in the PO container table
+	'F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET DUE_DATE = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER = '{3}'", v.Local.sDueDate, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+	'F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	'update the due date KEY in the PO container table
+	F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET DUE_DATE_KEY = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER = '{3}'", v.Local.sDateKey, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.Case("SHIP_DATE")
+	'get the value for the new ship date
+	V.Local.dShipDate.Set(V.DataTable.dtContainer(V.Args.RowIndex).SHIP_DATE!FieldVal)
+	F.Intrinsic.String.Format(V.Local.dShipDate, "YYYY-MM-DD",  V.Local.sShipDate)
+	F.Intrinsic.String.Format(V.Local.dShipDate, "YYYYMMDD",  V.Local.sDateKey)
+	V.Local.sPO.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO!FieldValTrim)
+	V.Local.sPOLine.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO_LINE!FieldValTrim)
+	V.Local.sContainerNo.Set(V.DataTable.dtContainer(V.Args.RowIndex).CONTAINER_NO!FieldValTrim)
+	V.Local.sVendor.Set(V.DataTable.dtContainer(V.Args.RowIndex).VENDOR!FieldValTrim)
+	
+	'update the ship date in the PO container table
+	F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET SHIP_DATE = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER = '{3}'", v.Local.sShipDate, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	'update the ship date in the PO container table
+	F.Intrinsic.String.Build("UPDATE PO_CONTAINER SET SHIP_DATE_KEY  = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER = '{3}'", v.Local.sDateKey, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.Case("PORT_ARRIVAL_DATE")
+	'get the value for the new port arrival date
+	V.Local.dPortArrivalDate.Set(V.DataTable.dtContainer(V.Args.RowIndex).PORT_ARRIVAL_DATE!FieldVal)
+	'Format the date to be PSQL friendly
+	F.Intrinsic.String.Format(V.Local.dPortArrivalDate, "YYYY-MM-DD", V.Local.sPortArrivalDate)
+	V.Local.sPO.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO!FieldValTrim)
+	V.Local.sPOLine.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO_LINE!FieldValTrim)
+	V.Local.sContainerNo.Set(V.DataTable.dtContainer(V.Args.RowIndex).CONTAINER_NO!FieldValTrim)
+	V.Local.sVendor.Set(V.DataTable.dtContainer(V.Args.RowIndex).VENDOR!FieldValTrim)
+	'check to see if a record exists in the custom GCG_6871_container table
+	F.Intrinsic.String.Build("SELECT * FROM GCG_6871_CONTAINER WHERE PO = '{0}' AND PO_LINE = '{1}' AND CONTAINER_NO = '{2}'", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		'if it does, update it
+		F.Intrinsic.String.Build("UPDATE GCG_6871_CONTAINER SET PORT_ARRIVAL_DATE = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER_NO = '{3}'", V.Local.sPortArrivalDate, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'	F.Intrinsic.Control.Else
+		'if it doesn't, insert a record	
+'		F.Intrinsic.String.Build("INSERT INTO GCG_6871_CONTAINER (PO, PO_LINE, CONTAINER_NO, VENDOR, TRACKING_NO) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sVendor.Trim, V.Local.sTrackingNo.Trim, v.Local.sSQL)
+'		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case("TRACKING_NO")
+	'get the value for the new tracking number
+	V.Local.sTrackingNo.Set(V.DataTable.dtContainer(V.Args.RowIndex).TRACKING_NO!FieldValTrim)
+	V.Local.sPO.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO!FieldValTrim)
+	V.Local.sPOLine.Set(V.DataTable.dtContainer(V.Args.RowIndex).PO_LINE!FieldValTrim)
+	V.Local.sContainerNo.Set(V.DataTable.dtContainer(V.Args.RowIndex).CONTAINER_NO!FieldValTrim)
+	V.Local.sVendor.Set(V.DataTable.dtContainer(V.Args.RowIndex).VENDOR!FieldValTrim)
+	'check to see if a record exists in the custom GCG_6871_container table
+	F.Intrinsic.String.Build("SELECT * FROM GCG_6871_CONTAINER WHERE PO = '{0}' AND PO_LINE = '{1}' AND CONTAINER_NO = '{2}'", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		'if it does, update it
+		F.Intrinsic.String.Build("UPDATE GCG_6871_CONTAINER SET TRACKING_NO = '{0}' WHERE PO = '{1}' AND PO_LINE = '{2}' AND CONTAINER_NO = '{3}'", V.Local.sTrackingNo.Trim, V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		'if it doesn't, insert a record
+		F.Intrinsic.String.Build("INSERT INTO GCG_6871_CONTAINER (PO, PO_LINE, CONTAINER_NO, VENDOR, PORT_ARRIVAL_DATE) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", V.Local.sPO.Trim, V.Local.sPOLine.Trim, V.Local.sContainerNo.Trim, V.Local.sVendor.Trim, V.Local.sPortArrivalDate, v.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGCContainer_CellValueChanged.End
+
+Program.Sub.f_Main_UnLoad.Start
+F.Intrinsic.Control.Try
+'callsub to save the data to the custom GCG_6871_Container table
+F.Intrinsic.Control.CallSub(SaveCustomData)
+
+'callsub to serialize the grid
+F.Intrinsic.Control.CallSub(Serialize)
+
+'close the connection
+F.ODBC.Connection!con.Close
+
+'end the program
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_Main_UnLoad.End
+
+Program.Sub.SaveCustomData.Start
+F.Intrinsic.Control.Try
+
+'update all records from the datatable into the custom GCG_6871_container. Add any new records using the SaveToDB function
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.SaveCustomData.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+V.Local.sSerialize.Declare(String)
+V.Local.sTemp.Declare(String)
+
+Gui.f_Main.GsGCContainer.Serialize("gvContainer", V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvContainer",6871,3000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6871", "ProjectTitle", "Container Maintenance Dashboard", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+'optional unattended parameters, those subs may not exist if not using them but won't be called
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Global.bError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+V.Global.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("UNATTENDED", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Control.If(V.Args.UNATTENDED)
+		F.Intrinsic.Control.CallSub(UnattendedErrorMessage, "MESSAGE", V.Local.sError, "PROJECT", V.Args.PROJECT, "PROJECTTITLE", V.Args.PROJECTTITLE)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8543.32295$}$1
+${$6$}$acollins$}$20230620164108598$}$h98hERc2yV72q0GaUGlwSaoK/aefTdVk4pnMIo1oXFbfvgA1s6mIX1FNaLG+rW2zbLDGxgupdVJW68brJwPUFQ==
+Program.Sub.Comments.End
